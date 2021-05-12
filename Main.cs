@@ -91,8 +91,8 @@ namespace SimpleTroopSpawner
             }
 
             InformationManager.ShowMultiSelectionInquiry(new MultiSelectionInquiryData(
-                new TextObject("Select Faction").ToString(),
-                new TextObject("Select The Faction Type").ToString(),
+                new TextObject("Select Troop").ToString(),
+                new TextObject("Select The Troop Type").ToString(),
                 troopElements,
                 true,
                 1,
