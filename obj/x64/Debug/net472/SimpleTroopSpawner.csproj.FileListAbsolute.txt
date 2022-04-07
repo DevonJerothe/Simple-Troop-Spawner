@@ -1,0 +1,8 @@
+G:\Installs\SteamLibrary\steamapps\common\Mount & Blade II Bannerlord\Modules\SimpleTroopSpawner\bin\Win64_Shipping_Client\net472\SimpleTroopSpawner.dll
+G:\Installs\SteamLibrary\steamapps\common\Mount & Blade II Bannerlord\Modules\SimpleTroopSpawner\bin\Win64_Shipping_Client\net472\SimpleTroopSpawner.pdb
+F:\dev stuff\C# Mods\SimpleTroopSpawner\SimpleTroopSpawner\obj\x64\Debug\net472\SimpleTroopSpawner.GeneratedMSBuildEditorConfig.editorconfig
+F:\dev stuff\C# Mods\SimpleTroopSpawner\SimpleTroopSpawner\obj\x64\Debug\net472\SimpleTroopSpawner.AssemblyInfoInputs.cache
+F:\dev stuff\C# Mods\SimpleTroopSpawner\SimpleTroopSpawner\obj\x64\Debug\net472\SimpleTroopSpawner.AssemblyInfo.cs
+F:\dev stuff\C# Mods\SimpleTroopSpawner\SimpleTroopSpawner\obj\x64\Debug\net472\SimpleTroopSpawner.csproj.CoreCompileInputs.cache
+F:\dev stuff\C# Mods\SimpleTroopSpawner\SimpleTroopSpawner\obj\x64\Debug\net472\SimpleTroopSpawner.dll
+F:\dev stuff\C# Mods\SimpleTroopSpawner\SimpleTroopSpawner\obj\x64\Debug\net472\SimpleTroopSpawner.pdb

@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\dev stuff\\C# Mods\\SimpleTroopSpawner\\SimpleTroopSpawner\\SimpleTroopSpawner.csproj": {}
+  },
+  "projects": {
+    "F:\\dev stuff\\C# Mods\\SimpleTroopSpawner\\SimpleTroopSpawner\\SimpleTroopSpawner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\dev stuff\\C# Mods\\SimpleTroopSpawner\\SimpleTroopSpawner\\SimpleTroopSpawner.csproj",
+        "projectName": "SimpleTroopSpawner",
+        "projectPath": "F:\\dev stuff\\C# Mods\\SimpleTroopSpawner\\SimpleTroopSpawner\\SimpleTroopSpawner.csproj",
+        "packagesPath": "C:\\Users\\DEVON\\.nuget\\packages\\",
+        "outputPath": "F:\\dev stuff\\C# Mods\\SimpleTroopSpawner\\SimpleTroopSpawner\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DEVON\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Bannerlord.BuildResources": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.1.68, )"
+            },
+            "Bannerlord.ButterLib": {
+              "include": "Compile",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Bannerlord.ReferenceAssemblies.Core.EarlyAccess": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.7.2.306299, )"
+            },
+            "Bannerlord.ReferenceAssemblies.SandBox.EarlyAccess": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.7.2.306299, )"
+            },
+            "Harmony.Extensions": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0.55, )"
+            },
+            "IsExternalInit": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Lib.Harmony": {
+              "include": "Compile",
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "Newtonsoft.Json": {
+              "include": "Compile",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Nullable": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.3.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

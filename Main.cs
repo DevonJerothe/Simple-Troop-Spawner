@@ -1,48 +1,71 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using BannerLib.Input;
 
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.Core;
-using TaleWorlds.Library;
-using TaleWorlds.InputSystem;
 using TaleWorlds.Localization;
-using TaleWorlds.Engine.Screens;
-using SandBox.View.Map;
 using TaleWorlds.CampaignSystem;
+using TaleWorlds.Core;
+
+using SandBox.View.Map;
+
+using Bannerlord.ButterLib.HotKeys;
+using TaleWorlds.ScreenSystem;
+using TaleWorlds.CampaignSystem.Party;
 
 namespace SimpleTroopSpawner
 {
     public class Main : MBSubModuleBase
     {
 
+        private bool _initialized;
         protected override void OnSubModuleLoad()
         {
-            AddKeys();         
+
+            //if (!_initialized)
+            //{
+            //    _initialized = true;
+            //    if (HotKeyManager.Create("SimpleTroopSpawner") is { } hkm)
+            //    {
+            //        hkm.Add<SpawnTroops>();
+            //        hkm.Build();
+            //    }
+            //}
+            base.OnSubModuleLoad();
+
         }
 
-        private void AddKeys()
+        protected override void OnBeforeInitialModuleScreenSetAsRoot()
         {
-            BannerLib.Input.HotKeyManager hkm = BannerLib.Input.HotKeyManager.Create("TestMod");
-            hkm.Add<SpawnTroops>();
-            hkm.Build();
+            if (!_initialized)
+            {
+                _initialized = true;
+                if (HotKeyManager.Create("SimpleTroopSpawner") is { } hkm)
+                {
+                    hkm.Add<SpawnTroops>();
+                    hkm.Build();
+                }
+            }
+
+            base.OnBeforeInitialModuleScreenSetAsRoot();
+
         }
     }
 
-    internal class SpawnTroops : HotKeyBase
-    {
+    internal class SpawnTroops : HotKeyBase {
+
+        protected override string DisplayName { get; }
+        protected override string Description { get; }
+        protected override TaleWorlds.InputSystem.InputKey DefaultKey { get; }
+        protected override string Category { get; }
+
         private List<CharacterObject> allTroops = new List<CharacterObject>();
 
         public SpawnTroops() : base(nameof(SpawnTroops))
         {
             DisplayName = new TextObject("Spawn Troops").ToString();
             Description = new TextObject().ToString();
-            DefaultKey = InputKey.NumpadMinus;
-            Category = BannerLib.Input.HotKeyManager.Categories[HotKeyCategory.CampaignMap];
+            DefaultKey = TaleWorlds.InputSystem.InputKey.NumpadMinus;
+            Category = HotKeyManager.Categories[HotKeyCategory.CampaignMap];
             Predicate = IsKeyActive;
         }
 
@@ -58,7 +81,7 @@ namespace SimpleTroopSpawner
 
             List<Kingdom> majorFactions = Kingdom.All.Where(kingdoms => kingdoms.IsKingdomFaction && !kingdoms.IsMinorFaction).ToList();
 
-            foreach(Kingdom kingdom in majorFactions)
+            foreach (Kingdom kingdom in majorFactions)
             {
                 factionElements.Add(new InquiryElement(kingdom, kingdom.Name.ToString(), new ImageIdentifier(kingdom.Banner)));
             }
@@ -77,7 +100,7 @@ namespace SimpleTroopSpawner
                     selectTroops();
                 },
                 null
-                ), true);                    
+                ), true);
         }
 
         private void selectTroops()
@@ -106,7 +129,8 @@ namespace SimpleTroopSpawner
                 ), true);
         }
 
-        private void getCount(CharacterObject troop) {
+        private void getCount(CharacterObject troop)
+        {
             InformationManager.ShowTextInquiry(new TextInquiryData(
                 new TextObject("Spawn Count").ToString()
               , new TextObject("Enter Amount to Spawn.").ToString()
@@ -125,13 +149,13 @@ namespace SimpleTroopSpawner
               , null), true);
         }
 
-        private void getTroopRoster(Kingdom faction) 
+        private void getTroopRoster(Kingdom faction)
         {
             allTroops.Clear();
 
             var troops = CharacterObject.All.Where(t => t.Culture == faction.Culture && t.IsBasicTroop && !t.IsNotTransferableInPartyScreen && !t.IsHero).ToList();
 
-            foreach(CharacterObject troop in troops)
+            foreach (CharacterObject troop in troops)
             {
                 allTroops.Add(troop);
                 getTroopTrees(troop);
@@ -156,6 +180,7 @@ namespace SimpleTroopSpawner
                 }
             }
         }
-    }
-}
 
+    }
+
+}
